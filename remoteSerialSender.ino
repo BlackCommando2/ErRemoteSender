@@ -12,7 +12,7 @@ void setup()
 {
   Serial.begin(115200);
   Serial2.begin(921600);
-  initPS4("11:11:11:11:11:11");
+  initPS4("2e:11:11:11:11:11");
   //  initPS4("22:22:22:22:22:22");
   getAllAnalog(setAllAnalog);
   //Attaching function with buttons
