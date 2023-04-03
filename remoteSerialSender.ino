@@ -68,16 +68,6 @@ void setup()
 int lx, ly, rightX, rightY;
 void loop()
 {
-  //  currentTime=millis();
-  //  if(zeroCheck)
-  //  {
-  //    Serial2.print("0,0,0,\n");
-  //    if(currentTime-previousTime>200)
-  //    {
-  //      zeroCheck=false;
-  //      previousTime=currentTime;
-  //    }
-  //  }
   //Serial.println(PS4.Battery());
 }
 void rightjoystickX(int v)
@@ -229,7 +219,7 @@ void shareReleased()
 
 void optionPressed()
 {
-  // Serial2.print("option\n");
+  Serial2.print("opt\n");
   Serial.print("option pressed\n");
 }
 void optionReleased()
@@ -263,11 +253,8 @@ void base(int x, int y, int r)
   baser = r;
   datastring = String(basex) + "," + String(basey) + "," + String(baser) + "," + "\n";
   Serial2.print(datastring);
-//  Serial.println(datastring);
+  //  Serial.println(datastring);
   //  Serial2.print(JSON.stringify(baseData)+"\n");
-
-  //Serial.println("X=" + String(x) + " ,Y=" + String(y) + " ,R=" + String(r));
-  //  Serial.println(JSON.stringify(baseData));
 }
 
 void directionalBase(int lX, int lY, int rX, int rY, int r)
