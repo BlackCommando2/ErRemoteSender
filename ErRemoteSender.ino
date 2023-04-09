@@ -8,6 +8,7 @@ static long previousTime;
 bool rumble = false, done = true, opt = false, init_ = false, zeroCheck = false, pressed = false;
 bool autoDown = false, autoCompute = false, autoBase = false;
 bool setAllAnalog = false;
+boolean switchmode=false, bool1=true;
 void setup()
 {
   Serial.begin(115200);
@@ -64,10 +65,18 @@ void setup()
 
   leftJoystick->attachAllData(base);
   //  allAnalog->attachAllAnalogData(directionalBase);
+
 }
 int lx, ly, rightX, rightY;
 void loop()
 {
+  if(bool1)
+  {
+   PS4.setLed(5, 240, 71);
+   bool1=false;
+   }
+   PS4.sendToController();
+   delay(10);
   //Serial.println(PS4.Battery());
 }
 void rightjoystickX(int v)
@@ -219,11 +228,22 @@ void shareReleased()
 
 void optionPressed()
 {
+  if(!switchmode)
+  {
+    PS4.setLed(250,10,10);
+  }
+  else if(switchmode)
+  {
+    PS4.setLed(53, 240, 71);
+  }
+//  PS4.sendToController();
+//  delay(10);
   Serial2.print("opt\n");
   Serial.print("option pressed\n");
 }
 void optionReleased()
 {
+  switchmode=!switchmode;
   Serial.print("option Released\n");
 }
 
