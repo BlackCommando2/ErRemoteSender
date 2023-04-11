@@ -121,16 +121,19 @@ void l1Pressed()
 }
 void l1Released()
 {
+  PS4.setRumble(0,0);
   Serial.print("l1 Released\n");
 }
 
 void r1Pressed()
 {
   PS4.setRumble(70, 220);
+  Serial2.print("bpush\n");
   Serial.print("r1 Pressed\n");
 }
 void r1Released()
 {
+  PS4.setRumble(0,0);
   Serial.println("r1 Released");
 }
 
