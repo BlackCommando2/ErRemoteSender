@@ -94,7 +94,7 @@ void rightjoystickX(int v)
     Serial2.print(datastring);
   }
   //  Serial.println("RightJoystick="+String(rightX)+","+String(rightY));
-  Serial.println(datastring);
+ // Serial.println(datastring);
 }
 void rightjoystickY(int v)
 {
@@ -111,123 +111,123 @@ void rightjoystickY(int v)
     Serial2.print(datastring);
   }
   //  Serial.println("RightJoystick="+String(rightX)+","+String(rightY));
-  Serial.println(datastring);
+  //Serial.println(datastring);
 }
 void l1Pressed()
 {
   PS4.setRumble(70, 220);
   Serial2.print("lpush\n");
-  Serial.print("l1 Pressed\n");
+  //Serial.print("l1 Pressed\n");
 }
 void l1Released()
 {
   PS4.setRumble(0,0);
-  Serial.print("l1 Released\n");
+  //Serial.print("l1 Released\n");
 }
 
 void r1Pressed()
 {
   PS4.setRumble(70, 220);
   Serial2.print("bpush\n");
-  Serial.print("r1 Pressed\n");
+  //Serial.print("r1 Pressed\n");
 }
 void r1Released()
 {
   PS4.setRumble(0,0);
-  Serial.println("r1 Released");
+//  Serial.println("r1 Released");
 }
 
 void crossPressed()
 {
   Serial2.print("cro\n");
-  Serial.print("crossPressed\n");
+//  Serial.print("crossPressed\n");
 }
 void crossReleased()
 {
-  Serial.print("crossReleased\n");
+//  Serial.print("crossReleased\n");
 }
 
 void circlePressed()
 {
   Serial2.print("cir\n");
-  Serial.print("circlePressed\n");
+//  Serial.print("circlePressed\n");
 }
 void circleReleased()
 {
-  Serial.print("circlePressed\n");
+//  Serial.print("circlePressed\n");
 }
 
 void trianglePressed()
 {
   Serial2.print("tri\n");
-  Serial.print("trianglePressed\n");
+//  Serial.print("trianglePressed\n");
 }
 void triangleReleased()
 {
-  Serial.print("triangleReleased\n");
+//  Serial.print("triangleReleased\n");
 }
 
 void sqaurePressed()
 {
   Serial2.print("squ\n");
-  Serial.print("sqaure pressed\n");
+//  Serial.print("sqaure pressed\n");
 }
 void sqaureReleased()
 {
-  Serial.print("sqaure Released\n");
+//  Serial.print("sqaure Released\n");
 }
 
 void upPressed()
 {
   Serial2.print("up\n");
-  Serial.print("up Pressed\n");
+//  Serial.print("up Pressed\n");
 }
 void upReleased()
 {
   // Serial2.print("rel\n");
-  Serial.print("up Released\n");
+//  Serial.print("up Released\n");
 }
 
 void downPressed()
 {
   Serial2.print("dow\n");
-  Serial.print("down Pressed\n");
+//  Serial.print("down Pressed\n");
 }
 void downReleased()
 {
   // Serial2.print("rel\n");
-  Serial.print("down Released\n");
+//  Serial.print("down Released\n");
 }
 
 void rightPressed()
 {
   Serial2.print("rig\n");
-  Serial.println("right");
+//  Serial.println("right");
 }
 void rightReleased()
 {
-  Serial.print("rightReleased\n");
+//  Serial.print("rightReleased\n");
 }
 
 void leftPressed()
 {
   Serial2.print("lef\n");
-  Serial.print("left Pressed\n");
+//  Serial.print("left Pressed\n");
 }
 void leftReleased()
 {
   // Serial2.print("rel\n");
-  Serial.print("left Released\n");
+//  Serial.print("left Released\n");
 }
 
 void sharePressed()
 {
   Serial2.print("share\n");
-  Serial.print("share Pressed\n");
+//  Serial.print("share Pressed\n");
 }
 void shareReleased()
 {
-  Serial.print("share Released\n");
+//  Serial.print("share Released\n");
 }
 
 void optionPressed()
@@ -244,34 +244,34 @@ void optionPressed()
   //  PS4.sendToController();
   //  delay(10);
   Serial2.print("opt\n");
-  Serial.print("option pressed\n");
+//  Serial.print("option pressed\n");
 }
 void optionReleased()
 {
   PS4.setRumble(0,0);
   switchmode = !switchmode;
-  Serial.print("option Released\n");
+//  Serial.print("option Released\n");
 }
 
 void psPressed()
 {
   Serial2.print("ps\n");
-  Serial.print("ps\n");
+//  Serial.print("ps\n");
 }
 void psReleased()
 {
-  Serial.print("ps Released\n");
+//  Serial.print("ps Released\n");
 }
 
 void touchpadPressed()
 {
   Serial2.print("tpad\n");
-  Serial.print("touchpad pressed\n");
+//  Serial.print("touchpad pressed\n");
 }
 void touchpadReleased()
 {
   Serial2.print("trel\n");
-  Serial.print("touchpad Released\n");
+//  Serial.print("touchpad Released\n");
 }
 void base(int x, int y, int r)
 {
