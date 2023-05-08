@@ -224,25 +224,25 @@ void sharePressed()
 {
   Serial2.print("share\n");
   //  Serial.print("share Pressed\n");
-  if (!switchPwm)
-  {
-    PS4.setLed(250, 90, 234);
-  }
-  else
-  {
-    if (!switchmode)
-    {
-      PS4.setLed(250, 10, 10);
-    }
-    else if (switchmode)
-    {
-      PS4.setLed(53, 240, 71);
-    }
-  }
+//  if (!switchPwm)
+//  {
+//    PS4.setLed(250, 90, 234);
+//  }
+//  else
+//  {
+//    if (!switchmode)
+//    {
+//      PS4.setLed(250, 10, 10);
+//    }
+//    else if (switchmode)
+//    {
+//      PS4.setLed(53, 240, 71);
+//    }
+//  }
 }
 void shareReleased()
 {
-  switchPwm=!switchPwm;
+//  switchPwm=!switchPwm;
   //  Serial.print("share Released\n");
 }
 
