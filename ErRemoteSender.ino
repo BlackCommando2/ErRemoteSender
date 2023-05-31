@@ -1,4 +1,4 @@
-//logori_pick_ps4_sender
+
 #include <PS4-ActionMonitor.h>
 String datastring;
 int basex, basey, baser;
@@ -8,12 +8,13 @@ static long previousTime;
 bool rumble = false, done = true, opt = false, init_ = false, zeroCheck = false, pressed = false;
 bool autoDown = false, autoCompute = false, autoBase = false;
 bool setAllAnalog = false;
-boolean switchmode = false, bool1 = true, switchPwm=false;
+boolean switchmode = false, switchPwm=false;
 void setup()
 {
   Serial.begin(115200);
   Serial2.begin(921600);
   initPS4("2e:11:11:11:11:11");
+//initPS4("08:00:27:ec:10:61");
   //  initPS4("22:22:22:22:22:22");
   getAllAnalog(setAllAnalog);
   //Attaching function with buttons
@@ -70,10 +71,13 @@ void setup()
 int lx, ly, rightX, rightY;
 void loop()
 {
-  if (bool1)
+  if (switchmode)
   {
-    PS4.setLed(5, 240, 71);
-    bool1 = false;
+    PS4.setLed(250, 10, 10);
+  }
+  else if (!switchmode)
+  {
+    PS4.setLed(53, 240, 71);
   }
   PS4.sendToController();
   delay(10);
@@ -249,14 +253,7 @@ void shareReleased()
 void optionPressed()
 {
   PS4.setRumble(70, 220);
-  if (!switchmode)
-  {
-    PS4.setLed(250, 10, 10);
-  }
-  else if (switchmode)
-  {
-    PS4.setLed(53, 240, 71);
-  }
+  switchmode=!switchmode;
   //  PS4.sendToController();
   //  delay(10);
   Serial2.print("opt\n");
@@ -265,7 +262,6 @@ void optionPressed()
 void optionReleased()
 {
   PS4.setRumble(0, 0);
-  switchmode = !switchmode;
   //  Serial.print("option Released\n");
 }
 
