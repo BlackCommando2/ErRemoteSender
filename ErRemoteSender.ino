@@ -8,7 +8,8 @@ static long previousTime;
 bool rumble = false, done = true, opt = false, init_ = false, zeroCheck = false, pressed = false;
 bool autoDown = false, autoCompute = false, autoBase = false;
 bool setAllAnalog = false;
-boolean switchmode = false, bool1 = true, switchPwm=false;
+boolean switchmode = false, bool1 = true, switchPwm = false;
+int color = 1;
 void setup()
 {
   Serial.begin(115200);
@@ -72,11 +73,20 @@ void loop()
 {
   if (bool1)
   {
-    PS4.setLed(5, 240, 71);
-    bool1 = false;
+    if (color == 1)
+    {
+      PS4.setLed(5, 240, 71);
+      PS4.sendToController();
+      bool1 = false;
+    }
+    else if (color == 2)
+    {
+      PS4.setLed(250, 10, 10);
+      PS4.sendToController();
+      bool1 = false;
+    }
   }
-  PS4.sendToController();
-  delay(10);
+
   //Serial.println(PS4.Battery());
 }
 void rightjoystickX(int v)
@@ -224,43 +234,41 @@ void sharePressed()
 {
   Serial2.print("share\n");
   //  Serial.print("share Pressed\n");
-//  if (!switchPwm)
-//  {
-//    PS4.setLed(250, 90, 234);
-//  }
-//  else
-//  {
-//    if (!switchmode)
-//    {
-//      PS4.setLed(250, 10, 10);
-//    }
-//    else if (switchmode)
-//    {
-//      PS4.setLed(53, 240, 71);
-//    }
-//  }
+  //  if (!switchPwm)
+  //  {
+  //    PS4.setLed(250, 90, 234);
+  //  }
+  //  else
+  //  {
+  //    if (!switchmode)
+  //    {
+  //      PS4.setLed(250, 10, 10);
+  //    }
+  //    else if (switchmode)
+  //    {
+  //      PS4.setLed(53, 240, 71);
+  //    }
+  //  }
 }
 void shareReleased()
 {
-//  switchPwm=!switchPwm;
+  //  switchPwm=!switchPwm;
   //  Serial.print("share Released\n");
 }
 
 void optionPressed()
 {
   PS4.setRumble(70, 220);
-  if (!switchmode)
+  if (color == 1)
   {
-    PS4.setLed(250, 10, 10);
+    color = 2;
   }
-  else if (switchmode)
+  else if (color == 2)
   {
-    PS4.setLed(53, 240, 71);
+    color = 1;
   }
-  //  PS4.sendToController();
-  //  delay(10);
+  bool1 = true;
   Serial2.print("opt\n");
-  //  Serial.print("option pressed\n");
 }
 void optionReleased()
 {
