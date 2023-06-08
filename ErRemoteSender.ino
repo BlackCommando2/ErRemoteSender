@@ -97,7 +97,7 @@ void rightjoystickX(int v)
     Serial2.print(datastring);
   }
   //  Serial.println("RightJoystick="+String(rightX)+","+String(rightY));
-  // Serial.println(datastring);
+   Serial.println(datastring);
 }
 void rightjoystickY(int v)
 {
@@ -114,7 +114,7 @@ void rightjoystickY(int v)
     Serial2.print(datastring);
   }
   //  Serial.println("RightJoystick="+String(rightX)+","+String(rightY));
-  //Serial.println(datastring);
+//  Serial.println(datastring);
 }
 void l1Pressed()
 {
@@ -303,5 +303,5 @@ void directionalBase(int lX, int lY, int rX, int rY, int r)
   baserX = rX;
   baser = r;
   datastring = String(baselX) + "," + String(baselY) + "," + String(baserX) + "," + String(baserY) + "," + String(baser) + "," + "\n";
-  //  Serial.println("lX: " + String(lX) + " lY: " + String(lY) + " rX: " + String(rX) + " rY: " + String(rY) + " , " + String(r));
+//  Serial.println("lX: " + String(lX) + " lY: " + String(lY) + " rX: " + String(rX) + " rY: " + String(rY) + " , " + String(r));
 }
